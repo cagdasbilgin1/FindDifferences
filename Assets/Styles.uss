@@ -30,3 +30,9 @@
   background-color: #cb3c3b;
   border-radius: 50%;
 }
+
+.play-button{
+    background-color: #29b11e;
+    border-width: 0px;
+    border-radius: 70px;
+}

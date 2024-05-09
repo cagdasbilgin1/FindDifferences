@@ -1,67 +1,80 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Styles.uss?fileID=7433441132597879392&amp;guid=d92296cf785316248a7bb45b00eb495f&amp;type=3#Styles" />
-    <ui:VisualElement style="flex-grow: 1; height: 15%; background-color: rgb(252, 252, 254);">
-        <ui:VisualElement style="flex-grow: 1; height: 20%;" />
-        <ui:VisualElement style="flex-grow: 1; flex-direction: row; height: 50%;">
-            <ui:VisualElement style="width: 50%; flex-direction: row; flex-grow: 1; height: 100%; align-items: center;">
-                <ui:VisualElement style="flex-grow: 1; min-width: auto; width: 50%; height: 100%; flex-direction: row; margin-left: 6%; padding-top: 2%; padding-bottom: 2%;">
-                    <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/heart.png?fileID=21300000&amp;guid=16d87fb675f513f4fa038914d01a39ec&amp;type=3#heart&apos;); -unity-background-scale-mode: scale-to-fit; display: flex; width: 32%; height: 100%; max-width: 82px;" />
-                    <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/heart.png?fileID=21300000&amp;guid=16d87fb675f513f4fa038914d01a39ec&amp;type=3#heart&apos;); -unity-background-scale-mode: scale-to-fit; display: flex; width: 32%; height: 100%; max-width: 82px;" />
-                    <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/heart.png?fileID=21300000&amp;guid=16d87fb675f513f4fa038914d01a39ec&amp;type=3#heart&apos;); -unity-background-scale-mode: scale-to-fit; display: flex; width: 32%; height: 100%; max-width: 82px;" />
+    <ui:VisualElement name="Game-Panel" style="width: 100%; height: 100%; display: flex; position: absolute;">
+        <ui:VisualElement style="flex-grow: 1; height: 15%; background-color: rgb(252, 252, 254);">
+            <ui:VisualElement style="flex-grow: 1; height: 20%;" />
+            <ui:VisualElement style="flex-grow: 1; flex-direction: row; height: 50%;">
+                <ui:VisualElement style="width: 50%; flex-direction: row; flex-grow: 1; height: 100%; align-items: center;">
+                    <ui:VisualElement style="flex-grow: 1; min-width: auto; width: 50%; height: 100%; flex-direction: row; margin-left: 6%; padding-top: 2%; padding-bottom: 2%;">
+                        <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/heart.png?fileID=21300000&amp;guid=16d87fb675f513f4fa038914d01a39ec&amp;type=3#heart&apos;); -unity-background-scale-mode: scale-to-fit; display: flex; width: 32%; height: 100%; max-width: 82px;" />
+                        <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/heart.png?fileID=21300000&amp;guid=16d87fb675f513f4fa038914d01a39ec&amp;type=3#heart&apos;); -unity-background-scale-mode: scale-to-fit; display: flex; width: 32%; height: 100%; max-width: 82px;" />
+                        <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/heart.png?fileID=21300000&amp;guid=16d87fb675f513f4fa038914d01a39ec&amp;type=3#heart&apos;); -unity-background-scale-mode: scale-to-fit; display: flex; width: 32%; height: 100%; max-width: 82px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement style="flex-grow: 1; width: 50%;" />
                 </ui:VisualElement>
-                <ui:VisualElement style="flex-grow: 1; width: 50%;" />
+                <ui:VisualElement style="width: 50%; margin-right: 3%; flex-grow: 1; flex-direction: row-reverse;">
+                    <AspectRatioPanel aspect-ratio-x="1" aspect-ratio-y="1" style="min-width: auto; min-height: auto; height: auto; width: auto; flex-grow: 1; padding-top: 4%; padding-right: 4%; padding-bottom: 4%; padding-left: 4%;">
+                        <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Settings-Btn" class="clue-button-out custom-button-out" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; align-items: center; width: auto; height: auto; flex-grow: 1; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;">
+                            <ui:VisualElement class="clue-button-in custom-button-out custom-button-in" style="width: 94%; padding-top: 18%; padding-right: 18%; padding-bottom: 18%; padding-left: 18%; height: 94%; flex-grow: 1; max-height: 94%;">
+                                <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/settings.png?fileID=21300000&amp;guid=1afb80e43a996a84bacaf1bd8a94404b&amp;type=3#settings&apos;); -unity-background-scale-mode: stretch-to-fill; width: auto; height: auto; flex-grow: 1;" />
+                            </ui:VisualElement>
+                        </ui:Button>
+                    </AspectRatioPanel>
+                </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement style="width: 50%; margin-right: 3%; flex-grow: 1; flex-direction: row-reverse;">
-                <AspectRatioPanel aspect-ratio-x="1" aspect-ratio-y="1" style="min-width: auto; min-height: auto; height: auto; width: auto; flex-grow: 1; padding-top: 4%; padding-right: 4%; padding-bottom: 4%; padding-left: 4%;">
-                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="settings-button" class="clue-button-out custom-button-out" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; align-items: center; width: auto; height: auto; flex-grow: 1; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;">
-                        <ui:VisualElement class="clue-button-in custom-button-out custom-button-in" style="width: 94%; padding-top: 18%; padding-right: 18%; padding-bottom: 18%; padding-left: 18%; height: 94%; flex-grow: 1; max-height: 94%;">
-                            <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/settings.png?fileID=21300000&amp;guid=1afb80e43a996a84bacaf1bd8a94404b&amp;type=3#settings&apos;); -unity-background-scale-mode: stretch-to-fill; width: auto; height: auto; flex-grow: 1;" />
+            <ui:VisualElement style="flex-grow: 1; height: 30%; flex-direction: row; justify-content: space-around; margin-right: 16%; margin-left: 16%;">
+                <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 10%; -unity-background-scale-mode: scale-to-fit; margin-top: 1%; margin-right: 1%; margin-left: 1%;" />
+                <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 10%; -unity-background-scale-mode: scale-to-fit; margin-top: 1%; margin-right: 1%; margin-left: 1%;" />
+                <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 10%; -unity-background-scale-mode: scale-to-fit; margin-top: 1%; margin-right: 1%; margin-left: 1%;" />
+                <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 10%; -unity-background-scale-mode: scale-to-fit; margin-top: 1%; margin-right: 1%; margin-left: 1%;" />
+                <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 10%; -unity-background-scale-mode: scale-to-fit; margin-top: 1%; margin-right: 1%; margin-left: 1%;" />
+                <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 10%; -unity-background-scale-mode: scale-to-fit; margin-top: 1%; margin-right: 1%; margin-left: 1%;" />
+                <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 10%; -unity-background-scale-mode: scale-to-fit; margin-top: 1%; margin-right: 1%; margin-left: 1%;" />
+                <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 10%; -unity-background-scale-mode: scale-to-fit; margin-top: 1%; margin-right: 1%; margin-left: 1%;" />
+                <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 10%; -unity-background-scale-mode: scale-to-fit; margin-top: 1%; margin-right: 1%; margin-left: 1%;" />
+                <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 10%; -unity-background-scale-mode: scale-to-fit; margin-top: 1%; margin-right: 1%; margin-left: 1%;" />
+                <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 10%; -unity-background-scale-mode: scale-to-fit; margin-top: 1%; margin-right: 1%; margin-left: 1%;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1; height: 70%; background-color: rgb(255, 255, 255);">
+            <ui:VisualElement class="find-table-image" style="flex-grow: 0; min-height: 40%; height: 44%; max-height: 50%; -unity-background-scale-mode: scale-to-fit; width: 96%;">
+                <AspectRatioPanel aspect-ratio-x="3" aspect-ratio-y="2" name="Top-Image" class="find-table-image" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; width: auto; height: auto; background-image: url(&apos;project://database/Assets/Images/Sample%20Images/Background.png?fileID=2800000&amp;guid=c0f085301eb97b74ab0d11f137e41ba5&amp;type=3#Background&apos;);" />
+            </ui:VisualElement>
+            <ui:VisualElement class="find-table-image" style="flex-grow: 0; margin-top: 2%; margin-right: 2%; margin-left: 2%; margin-bottom: 2%; -unity-background-scale-mode: scale-to-fit; min-height: 40%; width: 96%; height: 44%; max-height: 50%;">
+                <AspectRatioPanel aspect-ratio-x="3" aspect-ratio-y="2" name="Bottom-Image" class="find-table-image" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; width: auto; height: auto; background-image: url(&apos;project://database/Assets/Images/Sample%20Images/Background.png?fileID=2800000&amp;guid=c0f085301eb97b74ab0d11f137e41ba5&amp;type=3#Background&apos;);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1; height: 15%; justify-content: center; align-items: center; margin-bottom: 0; background-color: rgb(255, 255, 255);">
+            <ui:VisualElement class="clue-button-out" style="justify-content: flex-start; align-items: center; display: none;">
+                <ui:VisualElement class="clue-button-in" style="padding-top: 30px; padding-right: 30px; padding-bottom: 30px; padding-left: 30px;">
+                    <ui:VisualElement style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Images/idea.png?fileID=21300000&amp;guid=279da5b5d5b8f7c488a3427d40d5ddc8&amp;type=3#idea&apos;);" />
+                </ui:VisualElement>
+                <ui:VisualElement class="clue-button-counter" style="flex-grow: 1; position: absolute; align-self: flex-end; justify-content: center; align-items: center;">
+                    <ui:Label text="1" parse-escape-sequences="true" display-tooltip-when-elided="true" style="color: rgb(255, 255, 255); -unity-font-style: bold; font-size: 42px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: middle-center;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement style="flex-grow: 1; width: 100%; height: 70%; min-width: auto; min-height: auto;">
+                <AspectRatioPanel aspect-ratio-x="1" aspect-ratio-y="1" style="min-width: auto; min-height: auto; height: auto; width: auto; flex-grow: 1; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; position: relative; left: 0;">
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Clue-Btn" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; align-items: center; width: auto; height: auto; flex-grow: 1; display: flex; background-color: rgba(0, 0, 0, 0); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;">
+                        <ui:VisualElement class="clue-button-out custom-button-out" style="flex-grow: 1; align-items: center; width: 100%; height: 100%;">
+                            <ui:VisualElement class="clue-button-in custom-button-in" style="width: 94%; padding-top: 18%; padding-right: 18%; padding-bottom: 18%; padding-left: 18%; height: 94%; flex-grow: 1; max-height: 94%;">
+                                <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/idea.png?fileID=21300000&amp;guid=279da5b5d5b8f7c488a3427d40d5ddc8&amp;type=3#idea&apos;); -unity-background-scale-mode: stretch-to-fill; width: auto; height: auto; flex-grow: 1;" />
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                        <ui:VisualElement class="clue-button-counter button-counter" style="position: absolute; transform-origin: center; translate: 135% 0; justify-content: center; align-items: center; align-self: center; min-width: auto; min-height: auto;">
+                            <ui:Label text="1" parse-escape-sequences="true" display-tooltip-when-elided="true" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; color: rgb(255, 255, 255); font-size: 42px; -unity-font-style: bold; width: 100%; height: 100%; -unity-text-align: middle-center;" />
                         </ui:VisualElement>
                     </ui:Button>
                 </AspectRatioPanel>
             </ui:VisualElement>
-        </ui:VisualElement>
-        <ui:VisualElement style="flex-grow: 1; height: 30%; flex-direction: row; justify-content: space-around; margin-right: 16%; margin-left: 16%;">
-            <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 10%; -unity-background-scale-mode: scale-to-fit; margin-top: 1%; margin-right: 1%; margin-left: 1%;" />
-            <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 10%; -unity-background-scale-mode: scale-to-fit; margin-top: 1%; margin-right: 1%; margin-left: 1%;" />
-            <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 10%; -unity-background-scale-mode: scale-to-fit; margin-top: 1%; margin-right: 1%; margin-left: 1%;" />
-            <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 10%; -unity-background-scale-mode: scale-to-fit; margin-top: 1%; margin-right: 1%; margin-left: 1%;" />
-            <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 10%; -unity-background-scale-mode: scale-to-fit; margin-top: 1%; margin-right: 1%; margin-left: 1%;" />
-            <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 10%; -unity-background-scale-mode: scale-to-fit; margin-top: 1%; margin-right: 1%; margin-left: 1%;" />
-            <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 10%; -unity-background-scale-mode: scale-to-fit; margin-top: 1%; margin-right: 1%; margin-left: 1%;" />
-            <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 10%; -unity-background-scale-mode: scale-to-fit; margin-top: 1%; margin-right: 1%; margin-left: 1%;" />
-            <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 10%; -unity-background-scale-mode: scale-to-fit; margin-top: 1%; margin-right: 1%; margin-left: 1%;" />
-            <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 10%; -unity-background-scale-mode: scale-to-fit; margin-top: 1%; margin-right: 1%; margin-left: 1%;" />
-            <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 10%; -unity-background-scale-mode: scale-to-fit; margin-top: 1%; margin-right: 1%; margin-left: 1%;" />
+            <ui:VisualElement style="flex-grow: 1; width: 100%; height: 30%;" />
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:VisualElement style="flex-grow: 1; height: 70%; background-color: rgb(255, 255, 255);">
-        <ui:VisualElement class="find-table-image" style="background-image: url(&apos;project://database/Assets/Images/Sample%20Images/Background.png?fileID=2800000&amp;guid=c0f085301eb97b74ab0d11f137e41ba5&amp;type=3#Background&apos;); -unity-background-scale-mode: scale-to-fit; flex-grow: 0; min-height: 40%; width: 96%; height: 44%; max-height: 50%;" />
-        <ui:VisualElement class="find-table-image" style="flex-grow: 0; margin-top: 2%; margin-right: 2%; margin-left: 2%; margin-bottom: 2%; background-image: url(&apos;project://database/Assets/Images/Sample%20Images/Background.png?fileID=2800000&amp;guid=c0f085301eb97b74ab0d11f137e41ba5&amp;type=3#Background&apos;); -unity-background-scale-mode: scale-to-fit; min-height: 40%; width: 96%; height: 44%; max-height: 50%;" />
-    </ui:VisualElement>
-    <ui:VisualElement style="flex-grow: 1; height: 15%; background-color: rgb(252, 252, 254); justify-content: center; align-items: center; margin-bottom: 0;">
-        <ui:VisualElement class="clue-button-out" style="justify-content: flex-start; align-items: center; display: none;">
-            <ui:VisualElement class="clue-button-in" style="padding-top: 30px; padding-right: 30px; padding-bottom: 30px; padding-left: 30px;">
-                <ui:VisualElement style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Images/idea.png?fileID=21300000&amp;guid=279da5b5d5b8f7c488a3427d40d5ddc8&amp;type=3#idea&apos;);" />
-            </ui:VisualElement>
-            <ui:VisualElement class="clue-button-counter" style="flex-grow: 1; position: absolute; align-self: flex-end; justify-content: center; align-items: center;">
-                <ui:Label text="1" parse-escape-sequences="true" display-tooltip-when-elided="true" style="color: rgb(255, 255, 255); -unity-font-style: bold; font-size: 42px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: middle-center;" />
-            </ui:VisualElement>
-        </ui:VisualElement>
-        <ui:VisualElement style="flex-grow: 1; width: 100%; height: 70%; min-width: auto; min-height: auto;">
-            <AspectRatioPanel aspect-ratio-x="1" aspect-ratio-y="1" style="min-width: auto; min-height: auto; height: auto; width: auto; flex-grow: 1; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; position: relative; left: 0;">
-                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="clue-buttom" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; align-items: center; width: auto; height: auto; flex-grow: 1; display: flex; background-color: rgba(0, 0, 0, 0); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;">
-                    <ui:VisualElement class="clue-button-out custom-button-out" style="flex-grow: 1; align-items: center; width: 100%; height: 100%;">
-                        <ui:VisualElement class="clue-button-in custom-button-in" style="width: 94%; padding-top: 18%; padding-right: 18%; padding-bottom: 18%; padding-left: 18%; height: 94%; flex-grow: 1; max-height: 94%;">
-                            <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/idea.png?fileID=21300000&amp;guid=279da5b5d5b8f7c488a3427d40d5ddc8&amp;type=3#idea&apos;); -unity-background-scale-mode: stretch-to-fill; width: auto; height: auto; flex-grow: 1;" />
-                        </ui:VisualElement>
-                    </ui:VisualElement>
-                    <ui:VisualElement class="clue-button-counter button-counter" style="position: absolute; transform-origin: center; translate: 135% 0; justify-content: center; align-items: center; align-self: center; min-width: auto; min-height: auto;">
-                        <ui:Label text="1" parse-escape-sequences="true" display-tooltip-when-elided="true" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; color: rgb(255, 255, 255); font-size: 42px; -unity-font-style: bold; width: 100%; height: 100%; -unity-text-align: middle-center;" />
-                    </ui:VisualElement>
-                </ui:Button>
+    <ui:VisualElement name="MainMenu-Panel" style="background-color: rgb(255, 255, 255); display: flex; width: 100%; height: 100%; align-items: center; position: absolute;">
+        <ui:VisualElement style="flex-grow: 1; width: 45%; height: auto; min-width: auto; min-height: auto;">
+            <AspectRatioPanel aspect-ratio-x="4" aspect-ratio-y="1" style="min-width: auto; min-height: auto; height: auto; width: auto; flex-grow: 1; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; position: relative; left: 0;">
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Play-Btn" text="Play" class="play-button" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; align-items: center; width: 100%; height: 100%; flex-grow: 1; display: flex; font-size: 72px; color: rgb(255, 255, 255); -unity-font-style: bold;" />
             </AspectRatioPanel>
         </ui:VisualElement>
-        <ui:VisualElement style="flex-grow: 1; width: 100%; height: 30%;" />
     </ui:VisualElement>
 </ui:UXML>
