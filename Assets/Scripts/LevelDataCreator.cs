@@ -15,6 +15,8 @@ public class LevelDataCreator : MonoBehaviour
 
     public void CreateLevelData()
     {
+#if UNITY_EDITOR
+
         string directoryPath = "Assets/LevelData";
         if (!AssetDatabase.IsValidFolder(directoryPath))
         {
@@ -71,6 +73,8 @@ public class LevelDataCreator : MonoBehaviour
         AssetDatabase.SaveAssets();
 
         Debug.Log("Level data saved at: " + path);
+
+#endif
     }
 
     public void OnSaveBtnClicked()
