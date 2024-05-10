@@ -1,0 +1,3 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="Indicator-Graphic" style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 100%; height: 100%; -unity-background-scale-mode: scale-to-fit;" />
+</ui:UXML>

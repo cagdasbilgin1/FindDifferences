@@ -10,29 +10,45 @@
 }
 
 .custom-button-out {
-  height: 256px;
-  width: 256px;
-  background-color: #d3d0ed;
-  border-radius: 50%;
+    height: 256px;
+    width: 256px;
+    background-color: rgb(211, 208, 237);
+    border-radius: 50%;
 }
 
 .custom-button-in {
-  height: 240px;
-  width: 240px;
-  background-color: #ffffff;
-  margin-top: 2px;
-  border-radius: 50%;
+    height: 240px;
+    width: 240px;
+    background-color: rgb(255, 255, 255);
+    margin-top: 2px;
+    border-radius: 50%;
 }
 
-.button-counter{
-  height: 25%;
-  width: 25%;
-  background-color: #cb3c3b;
-  border-radius: 50%;
+.button-counter {
+    height: 25%;
+    width: 25%;
+    background-color: rgb(203, 60, 59);
+    border-radius: 50%;
 }
 
-.play-button{
-    background-color: #29b11e;
-    border-width: 0px;
+.play-button {
+    background-color: rgb(41, 177, 30);
+    border-width: 0;
     border-radius: 70px;
+}
+
+.find-indicator {
+    margin-top: 0.5%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    width: 10%;
+    max-width: 82;
+}
+
+.life-indicator {
+    margin-top: 0.5%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    width: 32%;
+    max-width: 82;
 }

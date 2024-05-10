@@ -5,10 +5,8 @@
             <ui:VisualElement style="flex-grow: 1; height: 20%;" />
             <ui:VisualElement style="flex-grow: 1; flex-direction: row; height: 50%;">
                 <ui:VisualElement style="width: 50%; flex-direction: row; flex-grow: 1; height: 100%; align-items: center;">
-                    <ui:VisualElement style="flex-grow: 1; min-width: auto; width: 50%; height: 100%; flex-direction: row; margin-left: 6%; padding-top: 2%; padding-bottom: 2%;">
-                        <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/heart.png?fileID=21300000&amp;guid=16d87fb675f513f4fa038914d01a39ec&amp;type=3#heart&apos;); -unity-background-scale-mode: scale-to-fit; display: flex; width: 32%; height: 100%; max-width: 82px;" />
-                        <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/heart.png?fileID=21300000&amp;guid=16d87fb675f513f4fa038914d01a39ec&amp;type=3#heart&apos;); -unity-background-scale-mode: scale-to-fit; display: flex; width: 32%; height: 100%; max-width: 82px;" />
-                        <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/heart.png?fileID=21300000&amp;guid=16d87fb675f513f4fa038914d01a39ec&amp;type=3#heart&apos;); -unity-background-scale-mode: scale-to-fit; display: flex; width: 32%; height: 100%; max-width: 82px;" />
+                    <ui:VisualElement name="Life-Indicators-Area" style="flex-grow: 1; min-width: auto; width: 50%; height: 100%; flex-direction: row; margin-left: 6%; padding-top: 2%; padding-bottom: 2%;">
+                        <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/heart.png?fileID=21300000&amp;guid=16d87fb675f513f4fa038914d01a39ec&amp;type=3#heart&apos;); -unity-background-scale-mode: scale-to-fit; display: none; width: 32%; height: 100%; max-width: 82px;" />
                     </ui:VisualElement>
                     <ui:VisualElement style="flex-grow: 1; width: 50%;" />
                 </ui:VisualElement>
@@ -22,19 +20,7 @@
                     </AspectRatioPanel>
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement style="flex-grow: 1; height: 30%; flex-direction: row; justify-content: space-around; margin-right: 16%; margin-left: 16%;">
-                <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 10%; -unity-background-scale-mode: scale-to-fit; margin-top: 1%; margin-right: 1%; margin-left: 1%;" />
-                <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 10%; -unity-background-scale-mode: scale-to-fit; margin-top: 1%; margin-right: 1%; margin-left: 1%;" />
-                <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 10%; -unity-background-scale-mode: scale-to-fit; margin-top: 1%; margin-right: 1%; margin-left: 1%;" />
-                <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 10%; -unity-background-scale-mode: scale-to-fit; margin-top: 1%; margin-right: 1%; margin-left: 1%;" />
-                <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 10%; -unity-background-scale-mode: scale-to-fit; margin-top: 1%; margin-right: 1%; margin-left: 1%;" />
-                <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 10%; -unity-background-scale-mode: scale-to-fit; margin-top: 1%; margin-right: 1%; margin-left: 1%;" />
-                <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 10%; -unity-background-scale-mode: scale-to-fit; margin-top: 1%; margin-right: 1%; margin-left: 1%;" />
-                <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 10%; -unity-background-scale-mode: scale-to-fit; margin-top: 1%; margin-right: 1%; margin-left: 1%;" />
-                <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 10%; -unity-background-scale-mode: scale-to-fit; margin-top: 1%; margin-right: 1%; margin-left: 1%;" />
-                <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 10%; -unity-background-scale-mode: scale-to-fit; margin-top: 1%; margin-right: 1%; margin-left: 1%;" />
-                <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/question.png?fileID=21300000&amp;guid=eba294578b1792f4aa032edd20fa06ae&amp;type=3#question&apos;); width: 10%; -unity-background-scale-mode: scale-to-fit; margin-top: 1%; margin-right: 1%; margin-left: 1%;" />
-            </ui:VisualElement>
+            <ui:VisualElement name="Find-Indicators-Area" style="flex-grow: 1; height: 30%; flex-direction: row; justify-content: space-around; margin-right: 12%; margin-left: 12%;" />
         </ui:VisualElement>
         <ui:VisualElement style="flex-grow: 1; height: 70%; background-color: rgb(255, 255, 255);">
             <ui:VisualElement class="find-table-image" style="flex-grow: 0; min-height: 40%; height: 44%; max-height: 50%; -unity-background-scale-mode: scale-to-fit; width: 96%;">
@@ -68,6 +54,21 @@
                 </AspectRatioPanel>
             </ui:VisualElement>
             <ui:VisualElement style="flex-grow: 1; width: 100%; height: 30%;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Game-Panel-Popup-Holder" style="flex-grow: 1; position: absolute; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.59); align-items: center; justify-content: center; display: none;">
+            <ui:VisualElement style="flex-grow: 1; width: 90%;">
+                <AspectRatioPanel aspect-ratio-x="10" aspect-ratio-y="12" name="Get-Live-Popup" style="width: auto; height: auto; top: 0; position: absolute; background-color: rgb(255, 255, 255); border-top-left-radius: 50px; border-top-right-radius: 50px; border-bottom-right-radius: 50px; border-bottom-left-radius: 50px; justify-content: center; align-items: center; display: none;">
+                    <ui:Button text="GET 3 LIVES" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Get-Live-Btn" style="width: 80%; height: 15%; background-color: rgb(41, 177, 30); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-top-left-radius: 105px; border-top-right-radius: 105px; border-bottom-right-radius: 105px; border-bottom-left-radius: 105px; color: rgb(255, 255, 255); font-size: 72px; -unity-font-style: bold;" />
+                </AspectRatioPanel>
+                <AspectRatioPanel aspect-ratio-x="10" aspect-ratio-y="12" name="Level-Up-Popup" style="width: auto; height: auto; top: 0; position: absolute; background-color: rgb(255, 255, 255); border-top-left-radius: 50px; border-top-right-radius: 50px; border-bottom-right-radius: 50px; border-bottom-left-radius: 50px; justify-content: center; align-items: center; display: none;">
+                    <ui:VisualElement style="flex-grow: 1; width: 100%; height: 70%; justify-content: center; align-items: center;">
+                        <ui:Label text="CONGRATS" parse-escape-sequences="true" display-tooltip-when-elided="true" style="width: 100%; height: 50%; -unity-text-align: middle-center; font-size: 88px; -unity-font-style: bold; color: rgb(108, 102, 199);" />
+                    </ui:VisualElement>
+                    <ui:VisualElement style="flex-grow: 1; width: 100%; height: 30%; justify-content: center; align-items: center;">
+                        <ui:Button text="RESTART LEVEL" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Restart-Btn" style="width: 80%; height: 50%; background-color: rgb(41, 177, 30); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-top-left-radius: 105px; border-top-right-radius: 105px; border-bottom-right-radius: 105px; border-bottom-left-radius: 105px; color: rgb(255, 255, 255); font-size: 72px; -unity-font-style: bold;" />
+                    </ui:VisualElement>
+                </AspectRatioPanel>
+            </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="MainMenu-Panel" style="background-color: rgb(255, 255, 255); display: flex; width: 100%; height: 100%; align-items: center; position: absolute;">

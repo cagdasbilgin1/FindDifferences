@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
+using static UnityEngine.Rendering.DebugUI.MessageBox;
 
+[RequireComponent(typeof(UIDocument))]
 public class UIController : MonoBehaviour
 {
     VisualElement mainMenuPanel;
@@ -10,7 +12,14 @@ public class UIController : MonoBehaviour
 
     VisualElement topImage;
     VisualElement bottomImage;
+    VisualElement lifeIndicatorsArea;
+    VisualElement findIndicatorsArea;
 
+    VisualElement gamePanelPopupHolder;
+    VisualElement GetLivePopup;
+    VisualElement LevelUpPopup;
+    Button getLiveBtn;
+    Button restartBtn;
     Button settingsBtn;
     Button clueBtn;
     Button playBtn;
@@ -20,9 +29,13 @@ public class UIController : MonoBehaviour
 
     public VisualElement TopImage => topImage;
     public VisualElement BottomImage => bottomImage;
+    public VisualElement LifeIndicatorsArea => lifeIndicatorsArea;
+    public VisualElement FindIndicatorsArea => findIndicatorsArea;
 
     public event Action<Vector2> OnImageClicked;
     public event Action<Vector2> OnDisplayedImageLoad;
+    public event Action OnGetLiveBtnClickedAct;
+    public event Action OnRestartBtnClickedAct;
 
     void Awake()
     {
@@ -38,6 +51,13 @@ public class UIController : MonoBehaviour
         //Game-Panel
         topImage = gamePanel.Q<VisualElement>("Top-Image");
         bottomImage = gamePanel.Q<VisualElement>("Bottom-Image");
+        lifeIndicatorsArea = gamePanel.Q<VisualElement>("Life-Indicators-Area");
+        findIndicatorsArea = gamePanel.Q<VisualElement>("Find-Indicators-Area");
+        gamePanelPopupHolder = gamePanel.Q<VisualElement>("Game-Panel-Popup-Holder");
+        GetLivePopup = gamePanel.Q<VisualElement>("Get-Live-Popup");
+        LevelUpPopup = gamePanel.Q<VisualElement>("Level-Up-Popup");
+        getLiveBtn = gamePanel.Q<Button>("Get-Live-Btn");
+        restartBtn = gamePanel.Q<Button>("Restart-Btn");
         settingsBtn = gamePanel.Q<Button>("Settings-Btn");
         clueBtn = gamePanel.Q<Button>("Clue-Btn");
 
@@ -51,6 +71,8 @@ public class UIController : MonoBehaviour
         //Game-Panel
         topImage.RegisterCallback<ClickEvent>(OnTopImageClicked);
         bottomImage.RegisterCallback<ClickEvent>(OnBottomImageClicked);
+        getLiveBtn.RegisterCallback<ClickEvent>(OnGetLiveBtnClicked);
+        restartBtn.RegisterCallback<ClickEvent>(OnRestartBtnClicked);
 
         StartCoroutine(WaitForDisplayedImageLoad());
     }
@@ -99,9 +121,29 @@ public class UIController : MonoBehaviour
         OnImageClicked?.Invoke(mousePosition);
     }
 
+    void OnGetLiveBtnClicked(ClickEvent evt)
+    {
+        GetLivePopup.style.display = DisplayStyle.None;
+        gamePanelPopupHolder.style.display = DisplayStyle.None;
+        OnGetLiveBtnClickedAct?.Invoke();
+    }
+
+    void OnRestartBtnClicked(ClickEvent evt)
+    {
+        LevelUpPopup.style.display = DisplayStyle.None;
+        gamePanelPopupHolder.style.display = DisplayStyle.None;
+        OnRestartBtnClickedAct?. Invoke();
+    }
+
     void HideAllPanels()
     {
         mainMenuPanel.style.display = DisplayStyle.None;
         gamePanel.style.display = DisplayStyle.None;
+    }
+
+    public void OpenGamePanelPopup(string name)
+    {
+        gamePanelPopupHolder.style.display = DisplayStyle.Flex;
+        gamePanel.Q<VisualElement>(name).style.display = DisplayStyle.Flex;
     }
 }
