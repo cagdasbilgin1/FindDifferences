@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
-using static UnityEngine.Rendering.DebugUI.MessageBox;
 
 [RequireComponent(typeof(UIDocument))]
 public class UIController : MonoBehaviour
@@ -60,7 +59,6 @@ public class UIController : MonoBehaviour
         restartBtn = gamePanel.Q<Button>("Restart-Btn");
         settingsBtn = gamePanel.Q<Button>("Settings-Btn");
         clueBtn = gamePanel.Q<Button>("Clue-Btn");
-
     }
 
     void OnEnable()
@@ -99,7 +97,7 @@ public class UIController : MonoBehaviour
             _imageWidth = imageRect.width;
             _imageHeight = imageRect.height;
         }
-        Debug.Log("Width: " + _imageWidth + "px, Height: " + _imageHeight + "px");
+
         OnDisplayedImageLoad?.Invoke(new Vector2(_imageWidth, _imageHeight));
     }
 

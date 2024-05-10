@@ -1,10 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using UnityEngine;
-using UnityEngine.U2D;
 using UnityEngine.UIElements;
-using static UnityEngine.InputManagerEntry;
 
 public class DifferenceManager : MonoBehaviour
 {
@@ -22,8 +19,6 @@ public class DifferenceManager : MonoBehaviour
     }
 
     [SerializeField] UIController _uiController;
-    [SerializeField] int _lifeOnStart;
-    [SerializeField] Sprite _backgroundSprite;
     [SerializeField] Sprite _findIndicatorCheckMark;
     [SerializeField] Sprite _findIndicatorQuestionMark;
     [SerializeField] Sprite _heart;
@@ -32,17 +27,14 @@ public class DifferenceManager : MonoBehaviour
     [SerializeField] VisualTreeAsset _differenceMarkTemplate;
     [SerializeField] VisualTreeAsset _lifeIndicatorTemplate;
     [SerializeField] VisualTreeAsset _findIndicatorTemplate;
-    [SerializeField] List<Difference> _differences;
-    List<DifferentItem> _differentItems;
+    [SerializeField] LevelData _levelData;
+
     List<VisualElement> _lifeIndicators;
     List<VisualElement> _findIndicators;
-    List<Difference> _currentDifferences;
-
-
+    List<DifferenceData> _currentDifferenceDatas;
     int _countOfDifferenceFound;
     int _currentLife;
     Vector2 _displayedImageSize;
-    Vector2 _originalImageSize;
     float _ratioOfImageSize;
 
     void OnEnable()
@@ -55,21 +47,14 @@ public class DifferenceManager : MonoBehaviour
 
     void Start()
     {
-        var width = _backgroundSprite.rect.width;
-        var height = _backgroundSprite.rect.height;
-
-        _originalImageSize = new Vector2(width, height);
-        _currentLife = _lifeOnStart;
-
-        Debug.Log("original width = " + width + " , original height : " + height);
-
-        _uiController.ArrangeImages(_backgroundSprite);
+        _currentLife = _levelData.LifeOnStart;
+        _uiController.ArrangeImages(_levelData.BackgroundSprite);
     }
 
     void OnImageClicked(Vector2 mousePos)
     {
-        Difference differencesToRemove = null;
-        foreach (var difference in _currentDifferences)
+        DifferenceData differencesToRemove = null;
+        foreach (var difference in _currentDifferenceDatas)
         {
             var distance = (mousePos - difference.GetCenterOfDifference(_ratioOfImageSize)).magnitude;
             var clickableSizeRadius = difference.ClickableSize * _displayedImageSize.x / 30;
@@ -85,11 +70,11 @@ public class DifferenceManager : MonoBehaviour
 
         if (differencesToRemove != null)
         {
-            _currentDifferences.Remove(differencesToRemove);
+            _currentDifferenceDatas.Remove(differencesToRemove);
             MarkIndicatorToGreenCheck(_findIndicators[_countOfDifferenceFound]);
             _countOfDifferenceFound++;
 
-            if(_currentDifferences.Count <= 0)
+            if(_currentDifferenceDatas.Count <= 0)
             {
                 OnAllDifferencesFound();
             }
@@ -104,6 +89,9 @@ public class DifferenceManager : MonoBehaviour
     void OnDisplayedImageLoadEvent(Vector2 displayedImageSize)
     {
         _displayedImageSize = displayedImageSize;
+        _ratioOfImageSize = _levelData.OriginalImageSize.x / _displayedImageSize.x;
+        _currentDifferenceDatas = new List<DifferenceData>(_levelData.DifferenceDatas);
+
         PlaceItems();
         PlaceLifeIndicators();
         PlaceFindIndicators();
@@ -111,37 +99,24 @@ public class DifferenceManager : MonoBehaviour
 
     void PlaceItems()
     {
-        _ratioOfImageSize = _originalImageSize.x / _displayedImageSize.x;
-        _currentDifferences = new List<Difference>(_differences);
-
-        foreach (var difference in _currentDifferences)
+        foreach (var differenceData in _levelData.DifferenceDatas)
         {
-            if (difference.Sprite1 != null)
+            if (differenceData.Sprite1 != null)
             {
-                var originalWidthPx = difference.Sprite1.rect.width;
-                var originalHeightPx = difference.Sprite1.rect.height;
-                var displayedSize = new Vector2(originalWidthPx, originalHeightPx) / _ratioOfImageSize;
+                var displayedSize = differenceData.Sprite1OriginalSize / _ratioOfImageSize;
+                var displayedPosition = differenceData.Sprite1OriginalPosition / _ratioOfImageSize;
+                var color = differenceData.Image1Color;
 
-                var originalPosition = difference.GetOriginalPositionOfImage(1);
-                var displayedPosition = originalPosition / _ratioOfImageSize;
-
-                var color = difference.Image1Color;
-
-                var differentItem = new DifferentItem(_differentItemTemplate, displayedPosition, displayedSize, difference.Sprite1, color);
+                var differentItem = new DifferentItem(_differentItemTemplate, displayedPosition, displayedSize, differenceData.Sprite1, color);
                 _uiController.TopImage.Add(differentItem.VisualElement);
             }
-            if (difference.Sprite2 != null)
+            if (differenceData.Sprite2 != null)
             {
-                var originalWidthPx = difference.Sprite2.rect.width;
-                var originalHeightPx = difference.Sprite2.rect.height;
-                var displayedSize = new Vector2(originalWidthPx, originalHeightPx) / _ratioOfImageSize;
+                var displayedSize = differenceData.Sprite2OriginalSize / _ratioOfImageSize;
+                var displayedPosition = differenceData.Sprite2OriginalPosition / _ratioOfImageSize;
+                var color = differenceData.Image2Color;
 
-                var originalPosition = difference.GetOriginalPositionOfImage(2);
-                var displayedPosition = originalPosition / _ratioOfImageSize;
-
-                var color = difference.Image2Color;
-
-                var differentItem = new DifferentItem(_differentItemTemplate, displayedPosition, displayedSize, difference.Sprite2, color);
+                var differentItem = new DifferentItem(_differentItemTemplate, displayedPosition, displayedSize, differenceData.Sprite2, color);
                 _uiController.BottomImage.Add(differentItem.VisualElement);
             }
         }
@@ -150,7 +125,7 @@ public class DifferenceManager : MonoBehaviour
     void PlaceLifeIndicators()
     {
         _lifeIndicators = new();
-        for (int i = 0; i < _lifeOnStart; i++)
+        for (int i = 0; i < _levelData.LifeOnStart; i++)
         {
             var lifeIndicator = _lifeIndicatorTemplate.Instantiate();
             lifeIndicator.AddToClassList("life-indicator");
@@ -162,7 +137,7 @@ public class DifferenceManager : MonoBehaviour
     void PlaceFindIndicators()
     {
         _findIndicators = new();
-        var differenceCount = _differences.Count;
+        var differenceCount = _levelData.DifferenceDatas.Count;
         for (int i = 0; i < differenceCount; i++)
         {
             var findIndicator = _findIndicatorTemplate.Instantiate();
@@ -202,7 +177,7 @@ public class DifferenceManager : MonoBehaviour
 
     void ResetLives()
     {
-        _currentLife = _lifeOnStart;
+        _currentLife = _levelData.LifeOnStart;
         foreach (var indicator in _lifeIndicators)
         {
             var graphic = indicator.Q<VisualElement>("Indicator-Graphic");
@@ -225,6 +200,7 @@ public class DifferenceManager : MonoBehaviour
     void OnRestartBtnClickedEvent()
     {
         _countOfDifferenceFound = 0;
+        _currentDifferenceDatas = new List<DifferenceData>(_levelData.DifferenceDatas);
         ResetLives();
         ResetFinds();
         PlaceItems();

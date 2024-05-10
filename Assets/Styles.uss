@@ -52,3 +52,12 @@
     width: 32%;
     max-width: 82;
 }
+
+.custom-button {
+    transition-timing-function: ease-out;
+    transition-duration: 0.1s;
+}
+
+.custom-button:hover {
+    scale: 1.05 1.05;
+}
